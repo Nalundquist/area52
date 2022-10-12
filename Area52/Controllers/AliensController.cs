@@ -83,7 +83,7 @@ namespace Area52.Controllers
 		{
 			Alien thisAlien = _db.Aliens.FirstOrDefault(alien => alien.AlienId == id);
 			_db.Aliens.Remove(thisAlien);
-			_db.SaveChanges;
+			_db.SaveChanges();
 			return RedirectToAction("Index");
 		}
 
