@@ -125,9 +125,9 @@ namespace Area52.Controllers
 			return RedirectToAction("Index");
 		}
 
-		public ActionResult DeleteSpecii(int Id)
+		public ActionResult DeleteSpecii(int joinId)
 		{
-			AlienSpecii thisJoin = _db.AlienSpecii.FirstOrDefault(join => join.AlienSpeciiId == id);
+			AlienSpecii thisJoin = _db.AlienSpecii.FirstOrDefault(join => join.AlienSpeciiId == joinId);
 			_db.AlienSpecii.Remove(thisJoin);
 			_db.SaveChanges();
 			return RedirectToAction("Index");

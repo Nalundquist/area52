@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Area52.Models.Alien
+
+<h1>EDIT</h1>
+
+<h3>You are editing the information for the Alien: @Html.DisplayFor(model => model.AlienName)</h3>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.AlienId)
+
+  @Html.LabelFor(model => model.AlienName)
+  @Html.EditorFor(model => model.AlienName)
+
+  <input type="submit" value="Save"/>
+}

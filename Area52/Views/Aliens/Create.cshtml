@@ -1,0 +1,19 @@
+@{
+	Layout = "_Layout";
+}
+
+@model Area52.Models.Alien
+
+<h3>Register new interstellar traveller:</h3>
+
+@using (Html.BeginForm())
+{
+	@Html.Label("Alien's Name:")
+	@Html.TextBoxFor(model => model.AlienName)
+	@Html.Label("Home Planet")
+	@Html.DropDownList("PlanetId")
+	@Html.Label("Species")
+	@Html.DropDownList("SpeciiId")
+	<input type="submit" value="Create"/>
+}
+

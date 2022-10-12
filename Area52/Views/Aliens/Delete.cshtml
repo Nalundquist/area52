@@ -1,0 +1,14 @@
+@{
+	Layout = "_Layout";
+}
+
+@model Area52.Models.Alien
+
+<h1>WARNING</h1>
+<h3>Are you <em>SURE</em> you wish to delete the vital records of this wonderful Alien?</h3>
+
+@using (Html.BeginForm())
+{
+	<p>@Html.HiddenFor(model => model.AlienId)</p>
+	<input type="submit" value="Confirm"/>
+}

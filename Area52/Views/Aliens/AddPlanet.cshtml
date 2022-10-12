@@ -1,0 +1,13 @@
+@{
+	Layout = "_Layout";
+}
+
+
+<h3>Add a visited (or home) planet to this Alien's records!</h3>
+
+@using (Html.BeginForm())
+{
+	@Html.Label("Planet:")
+	@Html.DropDownList("PlanetId")
+	<input type="submit" value="Add Planet"/>
+}

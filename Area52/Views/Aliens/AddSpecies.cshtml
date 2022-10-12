@@ -1,0 +1,14 @@
+@{
+	Layout = "_Layout";
+}
+
+@model Area52.Models.Aliens
+
+<h3>Add a Species to this Alien!</h3>
+
+@using (Html.BeginForm())
+{
+	@Html.Label("Species:")
+	@Html.DropDownList("SpeciesId")
+	<input type="submit" value="Add Species"/>
+}
