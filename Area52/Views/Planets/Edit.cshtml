@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Area52.Models.Planet
+
+<h1>Edit Planet</h1>
+
+<h3>You are editing the details for the planet: @Html.DisplayFor(model => model.PlanetName)</h3>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.PlanetId)
+
+  @Html.Label("Planet Name:")
+  @Html.EditorFor(model => model.PlanetName)
+
+  @Html.Label("Atmosphere:")
+  @Html.EditorFor(model => model.Atmosphere)
+
+  <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to Details", "Details", new { id = Model.PlanetId })</p> 

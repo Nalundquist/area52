@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Area52.Controller
+namespace Area52.Controllers
 {
   public class SpeciesController : Controller
   {
@@ -90,7 +90,7 @@ namespace Area52.Controller
 			return RedirectToAction("Index");
 		}
 
-    public ActionResult DeletePlanet(int Id)
+    public ActionResult DeletePlanet(int id)
 		{
 			PlanetSpecii thisJoin = _db.PlanetSpecii.FirstOrDefault(join => join.PlanetSpeciiId == id);
 			_db.PlanetSpecii.Remove(thisJoin);

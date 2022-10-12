@@ -31,7 +31,7 @@ namespace Area52.Controllers
     [HttpPost]
     public ActionResult Create(Alien alien, int SpeciiId, int PlanetId)
     {
-      _db.Alien.Add(alien);
+      _db.Aliens.Add(alien);
       _db.SaveChanges();
       if (SpeciiId != 0)
       {
@@ -102,7 +102,7 @@ namespace Area52.Controllers
 			return RedirectToAction("Index");
 		}
 
-		public ActionResult DeletePlanet(int Id)
+		public ActionResult DeletePlanet(int id)
 		{
 			AlienPlanet thisJoin = _db.AlienPlanet.FirstOrDefault(join => join.AlienPlanetId == id);
 			_db.AlienPlanet.Remove(thisJoin);
@@ -113,7 +113,7 @@ namespace Area52.Controllers
 				public ActionResult AddSpecii(int id)
 		{
 			Alien thisAlien = _db.Aliens.FirstOrDefault(alien => alien.AlienId == id);
-			ViewBag.SpeciiId = new SelectList(_db.Speciis, "SpeciiId", "SpeciiName");
+			ViewBag.SpeciiId = new SelectList(_db.Species, "SpeciiId", "SpeciiName");
 			return View(thisAlien);
 		}
 

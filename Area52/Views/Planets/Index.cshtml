@@ -1,0 +1,23 @@
+@{
+	Layout = "_Layout";
+}
+
+@using Area52.Models;
+
+<h3>All registered Planets:</h3>
+
+@if (Model.Count == 0)
+{
+	<p>There are no Planets Currently registered?</p>
+}
+else
+{
+	<ul>
+	@foreach(Planet planet in Model)
+	{
+		<li>@Html.ActionLink($"{planet.PlanetName}", "Details", new {id = planet.PlanetId})</li>
+	}
+	</ul>
+}
+
+<p>@Html.ActionLink("Add New Planet", "Create")</p>

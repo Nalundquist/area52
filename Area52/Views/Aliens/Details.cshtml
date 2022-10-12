@@ -6,37 +6,37 @@
 
 <h3>Details on @Model.AlienName;</h3>
 
-@if (Model.JointEntSpec.Count == 0)
+@if (Model.JoinEntSpec.Count == 0)
 {
   <p>This Alien has no Specii T_T!</p>
 }
-@else
+else
 {
   <ul>
-  @foreach(Specii join in Model.JoinEntSpec)
+  @foreach(var join in Model.JoinEntSpec)
   {
     <li>@Html.ActionLink($"{join.Specii.SpeciiName}", "Details", "Species", new { id = join.Specii.SpeciiId})</li>
     @using (Html.BeginForm("DeleteSpecii", "Specii"))
     {
-      @Html.Hidden("joinId", join.AlienSpeciiId)
+      @Html.Hidden("joinId", (int) join.AlienSpeciiId)
       <input type="submit" value="Delete"/>
     }
   }
   </ul> 
 }
-@if (model.JoinEntities.Count == 0)
+@if (Model.JoinEntPlan.Count == 0)
 {
   <p>This Alien has no Planet! Maybe it was destroyed in a Galactic War!!!</p>
 }
-@else
+else
 {
   <ul>
-    @foreach(Planet join in Model.JoinEntPlan)
+    @foreach(var join in Model.JoinEntPlan)
     {
       <li>@Html.ActionLink($"{join.Planet.PlanetName}", "Details", "Species", new {id = join.Planet.PlanetId})</li>
       @using (Html.BeginForm("DeletePlanet", "Planet"))
       {
-        @Html.Hidden("joinId", join.PlanetSpeciiId)
+        @Html.Hidden("joinId", (int) join.PlanetSpeciiId)
         <input type="submit" value="Delete"/>
       }
     }

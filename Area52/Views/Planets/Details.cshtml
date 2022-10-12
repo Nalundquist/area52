@@ -1,0 +1,19 @@
+@* @{
+  Layout = "_Layout";
+}
+
+@using Area52.Models;
+
+<h3>Details on @Model.PlanetName</h3>
+
+@if (Model.JoinPlanSpec.Count == 0)
+{
+  <p>No species call this planet home.</p>
+}
+
+<ul>
+  @foreach(Planet join in Model.JoinPlanSpec)
+  {
+    <li>@Html.ActionLink($"{join.Planet.PlanetName}", "Details", </li>
+  }
+</ul> *@

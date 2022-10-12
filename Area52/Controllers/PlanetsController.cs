@@ -9,7 +9,7 @@ namespace Area52.Controllers
 {
   public class PlanetsController : Controller
   {
-    private readonly Area52Context_db;
+    private readonly Area52Context _db;
 
     public PlanetsController(Area52Context db)
     {
@@ -47,7 +47,7 @@ namespace Area52.Controllers
 
     public ActionResult Edit(int id)
     {
-      Planet thisPlanet = _db.Planet.FirstOrDefault(planet => planet.PlanetId == id);
+      Planet thisPlanet = _db.Planets.FirstOrDefault(planet => planet.PlanetId == id);
       return View(thisPlanet);
     }
 
